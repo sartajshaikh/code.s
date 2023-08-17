@@ -1,9 +1,12 @@
-# code.s
-hi 
-iam ==
-a=5
-b=5
-them.
-the code is visible for all to the coder and devoloper
-a+b = 10
-then run the code to the server
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+
+</body>
+</html>
