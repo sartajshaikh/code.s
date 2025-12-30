@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TAJ E SERVICES | Digital & Business Solutions</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      background: #0f1419; 
+      color: #ffffff; 
+      overflow-x: hidden;
+    }
+
+    /* Modern Tech Background with Multiple Options */
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: 
+        linear-gradient(135deg, rgba(15, 32, 39, 0.92) 0%, rgba(32, 58, 67, 0.92) 50%, rgba(44, 83, 100, 0.92) 100%),
+        url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat fixed;
+      animation: subtleShift 25s ease infinite;
+    }
+    .bg-animation::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 10% 20%, rgba(0, 212, 255, 0.15), transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(138, 43, 226, 0.15), transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.08), transparent 50%);
+      animation: bgFloat 20s ease infinite;
+    }
+    .bg-animation::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 255, 0.03) 2px, rgba(0, 255, 255, 0.03) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(138, 43, 226, 0.03) 2px, rgba(138, 43, 226, 0.03) 4px);
+      opacity: 0.5;
+    }
+
+    @keyframes subtleShift {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    @keyframes bgFloat {
+      0%, 100% { opacity: 1; transform: translate(0, 0) scale(1); }
+      33% { opacity: 0.8; transform: translate(30px, -30px) scale(1.1); }
+      66% { opacity: 0.9; transform: translate(-30px, 30px) scale(0.95); }
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes bgPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.1); }
+    }
+
+    /* Floating Particles */
+    .particles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(138, 43, 226, 0.5);
+      border-radius: 50%;
+      animation: float 20s infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+    }
+
+    /* Header */
+    header {
+      position: relative;
+      padding: 120px 20px 80px;
+      text-align: center;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1522199755839-a2bacb67c546?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      opacity: 0.15;
+      z-index: -1;
+    }
+    .logo {
+      font-size: 4rem;
+      font-weight: 900;
+      color: #ffffff;
+      animation: fadeInDown 1s ease;
+      margin-bottom: 15px;
+      text-shadow: 0 4px 20px rgba(0,0,0,.3);
+      letter-spacing: 2px;
+    }
+    @keyframes gradientText {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .tagline {
+      font-size: 1.4rem;
+      opacity: 0.95;
+      animation: fadeInUp 1s ease 0.3s both;
+      letter-spacing: 1px;
+      color: #ffffff;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Services Section */
+    .services-section {
+      padding: 80px 20px;
+      max-width: 1400px;
+      margin: auto;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+      animation: fadeInUp 1s ease;
+    }
+    .section-title h2 {
+      font-size: 3rem;
+      color: #00d4ff;
+      margin-bottom: 10px;
+      font-weight: 700;
+      text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    }
+    .section-title p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      color: #a0aec0;
+    }
+    .section-title p {
+      font-size: 1.2rem;
+      opacity: 0.7;
+    }
+
+    /* Service Grid */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .service-card {
+      background: rgba(20, 30, 48, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      padding: 35px;
+      border-radius: 20px;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 0.8s ease backwards;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    .service-card:nth-child(1) { animation-delay: 0.1s; }
+    .service-card:nth-child(2) { animation-delay: 0.2s; }
+    .service-card:nth-child(3) { animation-delay: 0.3s; }
+    .service-card:nth-child(4) { animation-delay: 0.4s; }
+    .service-card:nth-child(5) { animation-delay: 0.5s; }
+    .service-card:nth-child(6) { animation-delay: 0.6s; }
+    .service-card:nth-child(7) { animation-delay: 0.7s; }
+    .service-card:nth-child(8) { animation-delay: 0.8s; }
+    .service-card:nth-child(9) { animation-delay: 0.9s; }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), transparent);
+      transition: 0.5s;
+    }
+    .service-card:hover::before {
+      left: 100%;
+    }
+    .service-card:hover {
+      transform: translateY(-15px) scale(1.02);
+      border-color: rgba(0, 212, 255, 0.6);
+      box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
+      background: rgba(20, 30, 48, 0.9);
+    }
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      display: inline-block;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: #00d4ff;
+      font-weight: 600;
+    }
+    .service-card p {
+      font-size: 1rem;
+      opacity: 0.8;
+      line-height: 1.6;
+      color: #cbd5e0;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: rgba(20, 30, 48, 0.6);
+      backdrop-filter: blur(15px);
+      padding: 80px 20px;
+      text-align: center;
+      margin-top: 60px;
+      border-top: 2px solid rgba(0, 212, 255, 0.3);
+      animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .contact-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #00d4ff;
+      font-weight: 700;
+      text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    }
+    .contact-info p {
+      margin: 8px 0;
+      font-size: 1rem;
+      color: #a0aec0;
+    }
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .contact-item {
+      background: rgba(20, 30, 48, 0.8);
+      padding: 25px 40px;
+      border-radius: 15px;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3); }
+      50% { box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5); }
+    }
+    .contact-item:hover {
+      transform: scale(1.05);
+      background: rgba(0, 212, 255, 0.15);
+      animation: none;
+      border-color: rgba(0, 212, 255, 0.6);
+    }
+    .contact-item a {
+      color: #00d4ff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .contact-item span {
+      font-size: 1.5rem;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(10, 15, 25, 0.9);
+      padding: 30px;
+      text-align: center;
+      margin-top: 60px;
+      border-top: 1px solid rgba(0, 212, 255, 0.3);
+    }
+    footer p {
+      opacity: 0.8;
+      font-size: 1rem;
+      color: #a0aec0;
+    }
+
+    /* Scroll Animation */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: scrollDown 2s infinite;
+    }
+    @keyframes scrollDown {
+      0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+      50% { transform: translateX(-50%) translateY(10px); opacity: 0.5; }
+    }
+    .scroll-indicator::before {
+      content: '↓';
+      font-size: 2rem;
+      color: #ffffff;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,.3));
+    }
+
+    @media (max-width: 768px) {
+      .logo { font-size: 2.5rem; }
+      .tagline { font-size: 1.1rem; }
+      .section-title h2 { font-size: 2rem; }
+      .contact-info { flex-direction: column; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-animation"></div>
+  <div class="particles"></div>
+
+  <header>
+    <h1 class="logo">TAJ E SERVICES</h1>
+    <p class="tagline">Your One-Stop Solution for Digital & Business Excellence</p>
+    <div class="scroll-indicator"></div>
+  </header>
+
+  <section class="services-section">
+    <div class="section-title">
+      <h2>Our Premium Services</h2>
+      <p>Empowering Your Business with Cutting-Edge Solutions</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-icon">📝</div>
+        <h3>Q-Paper Typing</h3>
+        <p>Fast, accurate, and professional question paper typing services with perfect formatting</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Excel Reports</h3>
+        <p>Advanced formatting, data analysis, and comprehensive MIS reports</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📈</div>
+        <h3>Power BI</h3>
+        <p>Interactive data visualization and powerful business intelligence dashboards</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💼</div>
+        <h3>Accounting</h3>
+        <p>Expert Tally solutions and professional bookkeeping services</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h3>Logo Design</h3>
+        <p>Creative branding and unique identity design for your business</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎴</div>
+        <h3>Business Cards</h3>
+        <p>Premium print-ready visiting cards that make lasting impressions</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3>Website Development</h3>
+        <p>Modern, responsive, and SEO-optimized corporate websites</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3>Custom Software</h3>
+        <h3>Custom Software</h3>
+        <p>Tailored billing and management solutions for your business needs</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Online Services</h3>
+        <p>Forms, applications, and complete cyber cafe solutions</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <h2>Get In Touch</h2>
+    <p style="opacity: 0.7; margin-bottom: 20px;">Ready to transform your business? Contact us today!</p>
+    <div class="contact-info">
+      <div class="contact-item">
+        <a href="tel:+917218356679">
+          <span>📞</span>
+          +91 7218356679
+        </a>
+      </div>
+      <div class="contact-item">
+        <a href="mailto:shaikhsartaj40@gmail.com">
+          <span>✉️</span>
+          shaikhsartaj40@gmail.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 TAJ E SERVICES | Sartaj Shaikh | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Create floating particles
+    const particlesContainer = document.querySelector('.particles');
+    for (let i = 0; i < 50; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.animationDelay = Math.random() * 20 + 's';
+      particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+      particlesContainer.appendChild(particle);
+    }
+
+    // Smooth scroll effect
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Add intersection observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.service-card').forEach(card => {
+      observer.observe(card);
+    });
+  </script>
+
+</body>
+</html>
